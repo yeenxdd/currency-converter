@@ -21,6 +21,7 @@ class ConversionRateController extends Controller
         $amount = $request->input('amount');
         $rate = $request->input('rate');
         $convertedAmount = $amount * $rate;
+        $convertedAmount = number_format($convertedAmount, 2);
 
         ConversionRate::create(['rate'=>$rate]);
 
